@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About INTELLECT — free, accessible educational resources.">
+<meta name="theme-color" content="#ffffff">
+<title>About | INTELLECT</title>
+<link rel="icon" type="image/x-icon" href="olp/logo5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>document.documentElement.className='js'</script>
+<style>
+:root{--bg:#fff;--soft:#f3f6ff;--soft2:#e4ecff;--text:#14213d;--muted:#55627f;--primary:#2f5bea;--accent:#ffd43b;--grid:rgba(47,91,234,.07);--line:rgba(20,33,61,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",system-ui,sans-serif;color:var(--text);line-height:1.65;overflow-x:hidden;background:radial-gradient(70% 40% at 50% 0%,rgba(47,91,234,.09),transparent 70%),linear-gradient(var(--grid) 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/32px 32px,var(--bg);background-attachment:fixed}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+h1,h2,h3,.brand,.fb,.mark,blockquote{font-family:"Bricolage Grotesque","DM Sans",sans-serif}
+.doodles{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.doodles span{position:absolute;left:var(--x);top:var(--y);font:600 var(--s,2.4rem)/1 Caveat,cursive;color:rgba(47,91,234,.16);transform:rotate(var(--r));animation:bob 9s ease-in-out infinite;animation-delay:var(--d)}
+.wrap{width:min(1140px,calc(100% - 40px));margin:auto}
+.bar{position:fixed;top:0;left:0;width:100%;height:3px;z-index:60;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--primary),var(--accent))}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:70px}
+.brand{display:inline-flex;align-items:center;gap:9px;font-size:1.4rem;font-weight:800;letter-spacing:-.02em}
+.brand svg{width:28px;height:28px;color:var(--primary)}
+.cap,.brand svg{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.links{display:flex;gap:6px;list-style:none}
+.links a{padding:9px 14px;color:var(--muted);font-weight:500;font-size:.93rem;border-radius:999px;transition:color .25s,background .25s}
+.links a:hover,.links a.on{color:var(--text);background:rgba(47,91,234,.2)}
+.pill{border:0;border-radius:999px;padding:10px 18px;background:var(--accent);color:#2a1a00;font-weight:700;cursor:pointer;transition:transform .25s,box-shadow .25s}
+.pill:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,212,59,.35)}
+
+/* Hero */
+.hero{padding:84px 0 0}
+.tag{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:999px;color:var(--primary);font-size:.85rem;font-weight:700;background:rgba(47,91,234,.08);animation:up .9s both}
+.hero h1{margin-top:22px;font-size:clamp(2.8rem,12vw,7.4rem);line-height:.98;letter-spacing:-.045em;font-weight:800}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.5em);filter:blur(8px);animation:rise 1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*.15s + .15s)}
+.cap{display:inline-block;width:.6em;height:.6em;margin-left:.12em;vertical-align:.02em;color:var(--primary);animation:toss 1.4s 1s cubic-bezier(.3,1.2,.5,1) both}
+.lead{margin-top:26px;max-width:600px;color:var(--muted);font-size:1.12rem;animation:up .9s .75s both}
+.frame{position:relative;margin-top:52px;aspect-ratio:21/9;min-height:210px;overflow:hidden;border:1px solid var(--line);border-bottom:0;border-radius:30px 30px 0 0;background:linear-gradient(135deg,var(--soft),var(--soft2));box-shadow:0 24px 60px rgba(20,33,61,.12);animation:up 1s 1s both}
+.frame img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;opacity:.92;transform:translateY(var(--py,0px))}
+.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,var(--bg))}
+
+/* Story */
+.sec{padding:96px 0}
+.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.story>div:first-child{position:sticky;top:110px}
+.kick{display:inline-block;margin-bottom:12px;padding:0 8px;font-size:.95rem;font-weight:700;background:linear-gradient(transparent 55%,var(--accent) 55%)}
+.story h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.05;letter-spacing:-.035em}
+.copy p{max-width:62ch;color:var(--muted);font-size:1.06rem}
+.copy p+p{margin-top:18px}
+.cta{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:14px;font-weight:700;transition:transform .25s,box-shadow .25s,background .25s}
+.btn b{font-weight:700;transition:transform .25s}
+.btn:hover b{transform:translateX(5px)}
+.btn.main{background:var(--primary);color:#fff}
+.btn.main:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(47,91,234,.45)}
+.btn.ghost{border:1px solid var(--line)}
+.btn.ghost:hover{background:rgba(47,91,234,.07);transform:translateY(-3px)}
+
+/* Values */
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:80px}
+.card{position:relative;padding:30px;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 10px 30px rgba(20,33,61,.06);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,opacity .8s ease var(--d,0s),translate .8s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.card:nth-child(2){margin-top:36px}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(280px circle at var(--mx,50%) var(--my,0%),rgba(47,91,234,.1),transparent 70%);opacity:0;transition:opacity .3s}
+.card:hover{border-color:rgba(47,91,234,.45)}
+.card:hover::before{opacity:1}
+.card>*{position:relative}
+.orb{position:relative;width:54px;height:54px;display:grid;place-items:center;border-radius:50%;font-size:1.35rem;color:var(--text);background:var(--accent)}
+.orb::before{content:"";position:absolute;inset:-8px;border-radius:50%;border:1.5px dashed rgba(20,33,61,.35);animation:spin 14s linear infinite}
+.card h3{margin-top:22px;font-size:1.3rem;letter-spacing:-.02em}
+.card p{margin-top:8px;color:var(--muted);font-size:.96rem}
+
+/* Team */
+.team{padding:10px 0 70px;scroll-margin-top:70px}
+.team-head{max-width:620px;margin:0 auto 56px;text-align:center}
+.team-head h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.05;letter-spacing:-.035em}
+.team-head p{margin-top:14px;color:var(--muted);font-size:1.06rem}
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;align-items:start}
+.person{position:relative;padding:34px 32px 30px;overflow:hidden;border:1px solid var(--line);border-radius:26px;background:#fff;box-shadow:0 10px 30px rgba(20,33,61,.06);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,opacity .8s ease var(--d,0s),translate .8s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.person:nth-child(2){margin-top:44px}
+.person::before{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(47,91,234,.1),transparent 70%);opacity:0;transition:opacity .3s}
+.person:hover{border-color:rgba(47,91,234,.45)}
+.person:hover::before{opacity:1}
+.person>*{position:relative}
+.role{display:inline-block;overflow:hidden;padding:6px 15px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;animation:bob 6s ease-in-out infinite}
+.role::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.7) 50%,transparent 70%);transform:translateX(-130%);animation:shine 3.8s ease-in-out infinite}
+.role.f{background:var(--accent);color:#2a1a00}
+.role.c{background:var(--primary);color:#fff;animation-delay:-3s}
+.ph{display:flex;align-items:center;gap:22px;margin-top:22px}
+.av{position:relative;flex:none;width:76px;height:76px;display:grid;place-items:center;border-radius:50%;font:800 1.9rem/1 "Bricolage Grotesque",sans-serif;background:var(--soft2);color:var(--primary)}
+.av.f{background:var(--accent);color:var(--text)}
+.av::before{content:"";position:absolute;inset:-8px;border-radius:50%;border:1.5px dashed rgba(20,33,61,.35);animation:spin 14s linear infinite}
+.person h3{font-size:1.5rem;line-height:1.15;letter-spacing:-.02em}
+.who{margin-top:4px;color:var(--muted);font-size:.92rem;font-weight:500}
+.note{margin-top:26px;padding:6px 18px 8px 24px;border-left:2px solid rgba(214,69,69,.4);border-radius:6px;background:repeating-linear-gradient(transparent 0 31px,rgba(47,91,234,.16) 31px 32px) 0 6px,#fbfcff}
+.note p{min-height:128px;font:600 1.45rem/32px Caveat,cursive;color:var(--text)}
+.js .note p{clip-path:inset(0 100% 0 0);transition:clip-path 1.8s cubic-bezier(.3,.7,.2,1) .5s}
+.js .person.in .note p{clip-path:inset(0)}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:30px;animation:up .9s .9s both}
+.stat{padding:18px 16px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.7);box-shadow:0 12px 30px rgba(17,24,39,.04)}
+.stat strong{display:block;font-size:1.4rem;letter-spacing:-.04em}
+.stat span{display:block;margin-top:4px;color:var(--muted);font-size:.82rem;font-weight:600}
+
+/* FAQ */
+.faq{padding:18px 0 90px}
+.faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:52px;align-items:start}
+.faq-head{position:sticky;top:110px}
+.faq-head h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.05;letter-spacing:-.045em}
+.faq-head p{margin-top:12px;color:var(--muted);font-size:1.04rem}
+.faq-list{display:grid;gap:12px}
+.faq-list details{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.82);box-shadow:0 10px 24px rgba(20,33,61,.04)}
+.faq-list summary{position:relative;padding:18px 48px 18px 20px;cursor:pointer;list-style:none;font-weight:800}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--primary);font-size:1.35rem}
+.faq-list details[open] summary::after{content:"\2212"}
+.faq-list details p{padding:0 20px 20px;color:var(--muted)}
+.faq-list details a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* Mission */
+.mission{padding:40px 0 110px;scroll-margin-top:70px}
+.board{position:relative;max-width:1000px;margin:auto;padding:60px clamp(22px,6vw,72px) 52px;border:10px solid #b9854f;border-radius:18px;text-align:center;color:#f4f7ef;background:radial-gradient(60% 50% at 25% 15%,rgba(255,255,255,.08),transparent 70%),#1d4a3b;box-shadow:0 30px 60px rgba(20,33,61,.22),inset 0 0 60px rgba(0,0,0,.35)}
+.mark{width:64px;height:64px;margin:0 auto 24px;display:grid;place-items:center;border:2px dashed rgba(244,247,239,.6);border-radius:50%;font:600 2rem/1 Caveat,cursive}
+blockquote{font-family:Caveat,cursive;font-size:clamp(1.9rem,4.2vw,3.1rem);font-weight:600;line-height:1.22}
+.mw{opacity:.2;transition:opacity .35s}
+.mw.on{opacity:1}
+cite{display:block;margin-top:28px;color:#cfe3d6;font-style:normal;font-weight:700;letter-spacing:.02em}
+
+/* Footer */
+footer{padding:60px 0 26px;border-top:1px solid var(--line);background:var(--soft)}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
+.fb{font-size:2rem;font-weight:800;letter-spacing:-.03em}
+.fc{max-width:380px;margin-top:12px;color:var(--muted)}
+.ft{color:var(--muted);font-size:.88rem;font-weight:700}
+.fl{margin-top:14px;list-style:none}
+.fl li+li{margin-top:9px}
+.fl a{color:var(--text);background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 3px no-repeat;transition:background-size .3s,color .3s}
+.fl a:hover{background-size:100% 3px}
+.fbot{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;text-align:center}
+
+/* Chatbot */
+#ct{position:fixed;right:24px;bottom:24px;z-index:80;width:58px;height:58px;border:0;border-radius:50%;background:linear-gradient(135deg,var(--primary),#5b8cff);color:#fff;font-size:1.4rem;cursor:pointer;box-shadow:0 12px 32px rgba(47,91,234,.5);transition:transform .3s}
+#ct:hover{transform:scale(1.08) rotate(12deg)}
+#ct::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--primary);animation:ping 2.6s ease-out infinite}
+#chatbot{position:fixed;right:24px;bottom:96px;z-index:79;width:min(360px,calc(100vw - 32px));overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--soft);box-shadow:0 30px 80px rgba(20,33,61,.25);opacity:0;visibility:hidden;transform:translateY(16px) scale(.96);transform-origin:100% 100%;transition:opacity .3s,transform .3s,visibility .3s}
+#chatbot.open{opacity:1;visibility:visible;transform:none}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;background:var(--primary);color:#fff;font-weight:700}
+.ch button{border:0;background:none;color:#fff;font-size:22px;cursor:pointer}
+#chatbox{height:250px;overflow-y:auto;padding:15px;background:var(--bg)}
+.msg{max-width:85%;margin-bottom:10px;padding:9px 13px;border-radius:14px;font-size:.88rem;animation:up .3s both}
+.msg.user{margin-left:auto;background:var(--primary);color:#fff}
+.msg.bot{background:var(--soft);border:1px solid var(--line)}
+.msg a{color:var(--primary);text-decoration:underline}
+.ci{display:flex;border-top:1px solid var(--line)}
+.ci input{flex:1;padding:13px;border:0;outline:none;background:var(--soft);color:var(--text)}
+.ci button{padding:0 18px;border:0;background:var(--accent);color:#2a1a00;font-weight:700;cursor:pointer}
+
+/* Reveal + motion */
+.js .rv{opacity:0;translate:0 28px;transition:opacity .8s ease var(--d,0s),translate .8s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.js .card.rv{transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,opacity .8s ease var(--d,0s),translate .8s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.js .person.rv{transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,opacity .8s ease var(--d,0s),translate .8s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.js .rv.in{opacity:1;translate:0 0}
+@keyframes rise{to{opacity:1;transform:none;filter:none}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+@keyframes toss{0%{opacity:0;transform:translateY(.7em) rotate(-40deg) scale(.4)}55%{opacity:1;transform:translateY(-.6em) rotate(210deg) scale(1.1)}100%{opacity:1;transform:none}}
+@keyframes bob{50%{translate:0 -16px}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shine{0%,55%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
+@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+
+@media(max-width:860px){
+.story{grid-template-columns:1fr;gap:28px}
+.story>div:first-child{position:static}
+.values{grid-template-columns:1fr;margin-top:56px}
+.card:nth-child(2){margin-top:0}
+.people{grid-template-columns:1fr}
+.person:nth-child(2){margin-top:0}
+.fg{grid-template-columns:1fr 1fr}
+.faq-layout{grid-template-columns:1fr;gap:24px}
+.faq-head{position:static}
+}
+@media(max-width:600px){
+.wrap{width:calc(100% - 28px)}
+.nav .wrap{flex-wrap:wrap;justify-content:center;gap:2px 12px;padding:8px 0;min-height:0}
+.pill{display:none}
+.links{gap:0}
+.links a{padding:8px 10px;font-size:.82rem}
+.hero{padding-top:48px}
+.sec{padding:64px 0}
+.mission{padding:24px 0 72px}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.faq{padding:10px 0 64px}
+.person{padding:26px 22px}
+.ph{gap:16px}
+.doodles span:nth-child(n+5){display:none}
+.fg{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+.hero h1 .w{opacity:1;transform:none;filter:none}
+.js .rv{opacity:1!important;translate:none!important}
+.mw{opacity:1}
+.js .note p{clip-path:none!important}
+}
+</style>
+</head>
+<body>
+<div class="doodles" aria-hidden="true">
+<span style="--x:4%;--y:18%;--r:-8deg;--s:2.6rem;--d:0s">E = mc²</span>
+<span style="--x:88%;--y:12%;--r:10deg;--s:4rem;--d:-2s">π</span>
+<span style="--x:80%;--y:64%;--r:-6deg;--s:4.2rem;--d:-4s">∑</span>
+<span style="--x:6%;--y:70%;--r:7deg;--s:2.8rem;--d:-1s">H₂O</span>
+<span style="--x:48%;--y:86%;--r:-10deg;--s:3.4rem;--d:-5s">A+</span>
+<span style="--x:84%;--y:38%;--r:12deg;--s:3rem;--d:-3s">√x</span>
+<span style="--x:60%;--y:6%;--r:5deg;--s:2.4rem;--d:-6s">F = ma</span>
+<span style="--x:22%;--y:90%;--r:-5deg;--s:2.4rem;--d:-7s">{ code }</span>
+</div>
+<div class="bar"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="capi" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/></symbol></svg>
+
+<header class="nav">
+<div class="wrap">
+<a class="brand" href="index.html"><svg aria-hidden="true"><use href="#capi"/></svg>INTELLECT</a>
+<nav aria-label="Main navigation">
+<ul class="links">
+<li><a href="index.html">Home</a></li>
+<li><a href="mweb.html">Contents</a></li>
+<li><a href="about.html" class="on">About</a></li>
+<li><a href="form.html">Support</a></li>
+</ul>
+</nav>
+<button class="pill" onclick="alert('Contact: +91 008 245 2944')">Contact</button>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="wrap">
+<span class="tag">Our story</span>
+<h1 aria-label="About INTELLECT"><span class="w" style="--i:0">About</span><br><span class="w" style="--i:1">INTELLECT</span><svg class="cap" aria-hidden="true"><use href="#capi"/></svg></h1>
+<p class="lead">INTELLECT is an educational website that provides free information across a wide range of topics. Our aim is simple: spread awareness and help educate society.</p>
+<div class="stats">
+<div class="stat"><strong>8</strong><span>Featured topics</span></div>
+<div class="stat"><strong>Free</strong><span>Access</span></div>
+<div class="stat"><strong>24/7</strong><span>Learning</span></div>
+<div class="stat"><strong>Clear</strong><span>Explanations</span></div>
+</div>
+<div class="frame"><img src="olp/slide3.jpeg" alt="INTELLECT"></div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+<div class="story">
+<div class="rv">
+<div class="kick">Why we exist</div>
+<h2>Learning shouldn't come with a price tag.</h2>
+</div>
+<div class="copy rv" style="--d:.12s">
+<p>We started INTELLECT to make quality learning material available to anyone, regardless of background or budget. From technology and cyber security to conservation and biology, every topic on the site is written to be clear, useful, and easy to explore.</p>
+<p>Whether you're a student working on a project or just curious about how something works, INTELLECT is built to give you a straightforward starting point — free of clutter, and free of cost.</p>
+<div class="cta">
+<a class="btn main" href="mweb.html">Browse topics <b>→</b></a>
+<a class="btn ghost" href="form.html">Support us</a>
+</div>
+</div>
+</div>
+
+<div class="values">
+<div class="card rv"><div class="orb">∞</div><h3>Free, always</h3><p>Every resource on INTELLECT is free to access — no paywalls, no sign-ups required.</p></div>
+<div class="card rv" style="--d:.12s"><div class="orb">◎</div><h3>Clear over complex</h3><p>We write for understanding first, trimming jargon so ideas are easy to follow.</p></div>
+<div class="card rv" style="--d:.24s"><div class="orb">✦</div><h3>Awareness-driven</h3><p>From cyber safety to conservation, our topics aim to inform choices, not just facts.</p></div>
+</div>
+</div>
+</section>
+
+<section class="team" id="team">
+<div class="wrap">
+<div class="team-head rv">
+<div class="kick">The people behind it</div>
+<h2>Meet the founders</h2>
+<p>The team behind INTELLECT's mission to make quality learning free for everyone.</p>
+</div>
+<div class="people">
+<article class="person rv">
+<span class="role f">Founder</span>
+<div class="ph"><div class="av f">S</div><div><h3>SHAMIL KP</h3><div class="who">Founder &amp; CEO</div></div></div>
+<div class="note"><p><!-- EDIT: founder's message / bio -->We started INTELLECT to make quality learning available to anyone, regardless of background or budget.</p></div>
+</article>
+<article class="person rv" style="--d:.15s">
+<span class="role c">Co-Founder</span>
+<div class="ph"><div class="av">D</div><div><h3>DHANANJAY MK</h3><div class="who">Co-Founder & Chairman</div></div></div>
+<div class="note"><p><!-- EDIT: co-founder's message / bio -->Write the co-founder's message or short bio here.</p></div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="faq" id="faq">
+<div class="wrap faq-layout">
+<div class="faq-head rv">
+<div class="kick">Good to know</div>
+<h2>Questions, answered.</h2>
+<p>Quick details about using INTELLECT and finding the right resource.</p>
+<div class="cta"><a class="btn ghost" href="form.html">Ask us a question</a></div>
+</div>
+<div class="faq-list rv" style="--d:.12s">
+<details>
+<summary>Is INTELLECT free to use?</summary>
+<p>Yes. The learning resources are free to read, and you do not need to create an account to browse the site.</p>
+</details>
+<details>
+<summary>What subjects can I learn about?</summary>
+<p>The library covers technology, science, environment, digital safety, health awareness, and related topics. <a href="mweb.html">Browse the contents</a> to see the current collection.</p>
+</details>
+<details>
+<summary>Can I suggest a topic or report a correction?</summary>
+<p>Yes. Send the team a message through the <a href="form.html">support page</a> with your topic suggestion or the page details that need attention.</p>
+</details>
+<details>
+<summary>How can I support the project?</summary>
+<p>You can share the resources, send feedback, volunteer ideas, or contact the team through the <a href="form.html">support page</a>.</p>
+</details>
+</div>
+</div>
+</section>
+
+<section class="mission" id="missions">
+<div class="wrap">
+<div class="board rv">
+    
+    <br>
+<!-- <div class="mark">I</div> -->
+<blockquote>“Our mission is to democratize education by providing free, high-quality educational resources that nurture curiosity, foster critical thinking, and inspire a lifelong love of learning.”</blockquote>
+<!-- <cite>— JOHAN JOHN MATHEW, FOUNDER &amp; CEO</cite> -->
+ <br>
+ <br>
+</div>
+</div>
+</section>
+</main>
+
+
+<footer>
+  <div class="wrap footer-shell">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+           <img src="olp/logo3NW.png" alt="INTELLECT footer logo" class="footer-logo" height="110px">
+       
+        </div>
+        <p class="footer-copy">Making quality online education accessible to all.</p>
+        <div class="socials">
+          <a href="#" aria-label="GitHub"><i class="fa fa-github"></i></a>
+          <a href="https://youtu.be/4VgtNE7UxeQ?si=o7RMczO2otVyLDxo" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html">Support us</a></li>
+          <li><a href="portfolio.html" target="_blank">Developer</a></li>
+          <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+          <li><a href="#missions">Mission</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">Get in touch</div>
+        <ul class="footer-links">
+          <li><a href="mailto:intellectsupport@gmail.com">intellecteducationpvt@gmail.com</a></li>
+          <li><a href="tel:+910082452944">+91 1504 2708 00</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">Other websites</div>
+        <ul class="footer-links">
+          <li><a href="attain.html" target="_blank">ATTAIN</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">© 2023–26, intellecteducationpvt.com · All Rights Reserved.</div>
+  </div>
+</footer>
+
+  <style>
+/*footer*/footer{padding:54px 0 18px;border-top:1px solid var(--line);background:linear-gradient(180deg,#0d1424,#0a1020)}
+.footer-shell{color:#e5ebff}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:42px;align-items:start}
+.footer-brand{display:flex;align-items:center;gap:10px;font-size:2rem;font-weight:800;letter-spacing:-.06em}
+.footer-brand svg{width:30px;height:30px;color:#8db8ff}
+.footer-copy{max-width:380px;margin-top:12px;color:#aebdde;font-size:1.05rem}
+.footer-title{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#94a3c5}
+.footer-links{list-style:none;margin-top:14px}
+.footer-links li+li{margin-top:10px}
+.footer-links a{color:#dfe7ff;transition:color .25s}
+.footer-links a:hover{color:#fff}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.socials a{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);color:#eaf0ff;border:1px solid rgba(255,255,255,.08);transition:transform .25s,background .25s}
+.socials a:hover{transform:translateY(-2px);background:rgba(255,255,255,.12)}
+.footer-bottom{margin-top:30px;padding-top:18px;border-top:1px solid rgba(148,163,197,.22);color:#9db0cf;font-size:.84rem;text-align:center}
+
+  </style>
+<button id="ct" aria-label="Open chatbot" aria-expanded="false">✦</button>
+<div id="chatbot" role="dialog" aria-label="Chatbot">
+<div class="ch"><span>Chatbot | INTELLECT</span><button id="cc" aria-label="Close chatbot">&times;</button></div>
+<div id="chatbox"></div>
+<div class="ci"><input type="text" id="userinput" placeholder="Type a message..."><button id="sendbtn">Send</button></div>
+</div>
+
+<script>
+/* Reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* Scroll progress, hero parallax, mission words lighting up */
+const bar=document.querySelector('.bar'),img=document.querySelector('.frame img'),q=document.querySelector('blockquote');
+q.innerHTML=q.textContent.trim().split(/\s+/).map(w=>'<span class="mw">'+w+'</span>').join(' ');
+const mw=[...q.children];
+function onScroll(){
+const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+bar.style.transform='scaleX('+(h>0?y/h:0)+')';
+img.style.setProperty('--py',Math.min(y*.04,18)+'px');
+const r=q.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(innerHeight*.5+r.height*.6))),n=Math.round(p*mw.length);
+mw.forEach((s,i)=>s.classList.toggle('on',i<n))}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* Card spotlight + tilt */
+document.querySelectorAll('.card,.person').forEach(c=>{
+c.addEventListener('pointermove',e=>{const b=c.getBoundingClientRect(),x=(e.clientX-b.left)/b.width,y=(e.clientY-b.top)/b.height;
+c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');
+c.style.transform='perspective(800px) rotateX('+(.5-y)*8+'deg) rotateY('+(x-.5)*8+'deg) translateY(-6px)'});
+c.addEventListener('pointerleave',()=>c.style.transform='')});
+
+/* Chatbot */
+const hi="Hi there! How can I assist you today?",it="Here you will get notes and a lot of information. INTELLECT guides you and helps you with your learning and projects.",dev="Want to know more about the developer? Visit the <a href='portfolio.html' target='_blank'>Developer Page</a>.",ok="It's my pleasure 😊",how="I'm just a bot, but I'm here to help you!";
+const page=(t,u,l)=>"Want to know more about "+t+"? Visit our <a href='"+u+"' target='_blank'>"+l+"</a>.";
+const responses={hello:hi,hlo:hi,hi:hi,intellect:it,"about intellect":it,"about developer":dev,developer:dev,"how are you":how,"how r u":how,"need help":"How can I help you today?",bye:"Goodbye! Have a great day!","thank u":ok,"thank you":ok,
+drugs:page("drugs","web.html","Drug Page"),drug:page("drugs","web.html","Drug Page"),
+"cyber security":page("Cyber Security","web2.html","Cyber Security Page"),hacking:page("hacking","web2.html","Hacking Page"),ai:page("AI","aii.html","AI Page"),
+deforestation:page("deforestation","para.html","Deforestation Page"),"machine language":page("machine language","compprogram.html","Machine Language Page"),
+"computer programming":page("computer programming","compprogram.html","Computer Programming Page"),"computer network":page("computer networks","networks.html","Computer Network Page"),
+"flora and fauna":page("flora and fauna","flora.html","Flora and Fauna Page"),flora:page("flora","flora.html","Flora Page"),fauna:page("fauna","flora.html","Fauna Page"),
+"project tiger":page("Project Tiger","flora.html","Project Tiger Page"),"cloud computing":page("Cloud Computing","cloud.html","Cloud Computing Page"),
+"tips for learning":"Visit our learning guide website <a href='attain.html' target='_blank'>Attain</a>.",
+"tips for improving memory":"Visit our learning guide website <a href='attain.html#memory' target='_blank'>Memory Improvement Page</a>.",
+default:"Oops, I'm sorry, I didn't understand that."};
+const cb=document.getElementById('chatbot'),box=document.getElementById('chatbox'),inp=document.getElementById('userinput'),ct=document.getElementById('ct');
+function tog(o){cb.classList.toggle('open',o);ct.setAttribute('aria-expanded',o);if(o)inp.focus()}
+ct.onclick=()=>tog(!cb.classList.contains('open'));
+document.getElementById('cc').onclick=()=>tog(false);
+document.getElementById('sendbtn').onclick=send;
+inp.onkeydown=e=>{if(e.key==='Enter')send();if(e.key==='Escape')tog(false)};
+function add(who,msg){const d=document.createElement('div');d.className='msg '+who;who==='user'?d.textContent=msg:d.innerHTML=msg;box.appendChild(d);box.scrollTop=box.scrollHeight}
+function send(){const v=inp.value.trim();if(!v)return;add('user',v);inp.value='';setTimeout(()=>add('bot',responses[v.toLowerCase()]||responses.default),350)}
+</script>
+</body>
+</html>

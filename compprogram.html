@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Computer programming — what it is, compiling, machine language, interpreters, history, and types of languages.">
+  <title>INTELLECT</title>
+  <link rel="icon" type="image/x-icon" href="olp/logo5.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=LGgSJPJdS9HMb4_9e3G56IrD-5yqLpBX1fhagThoj1FNicHt4011w1lmcSF0KG_BLj-SBk_5sTQOVMDhdQfr4nxiFRJfjV4d-u0F6Ep29aI" charset="UTF-8"></script><style>
+    :root {
+      --bg: #f3f3de;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --primary: #3157d5;
+      --primary-dark: #203da5;
+      --accent: #15a37b;
+      --dark: #0b1220;
+      --shadow: 0 18px 50px rgba(16, 24, 40, .09);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+
+    .container { width: min(1160px, calc(100% - 40px)); margin: auto; }
+
+    a {
+      color: inherit;
+      font-size: 10;
+      text-decoration: none;
+    }
+
+    #navbar {
+      background: rgb(24, 26, 25);
+      color: rgb(13, 26, 38);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 53px;
+      line-height: 60px;
+      width: 98.7vw;
+      z-index: 10;
+    }
+
+    @keyframes animateBg {
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    .nav-wrapper {
+      margin: auto;
+      text-align: center;
+      width: 70%;
+    }
+
+    @media(max-width: 768px) {
+      .nav-wrapper {
+        width: 90%;
+      }
+    }
+
+    @media(max-width: 638px) {
+      .nav-wrapper {
+        width: 100%;
+      }
+    }
+
+
+    .logo {
+      float: right;
+      position: absolute;
+      right: 2%;
+      margin-top: 1px;
+      font-size: 55px;
+      height: 0px;
+
+
+    }
+
+
+    #navbar ul {
+      list-style: none;
+      margin-right: 5px;
+      margin-top: -5px;
+      text-align: right;
+      position: absolute;
+      top: 2px;
+      left: 35%;
+      transition: transform 0.5s ease-out;
+      -webkit-transition: transform 0.5s ease-out;
+    }
+
+    @media(max-width: 640px) {
+      #navbar ul {
+        display: none;
+      }
+    }
+
+    @media(orientation: landscape) {
+      #navbar ul {
+        display: inline-block;
+      }
+    }
+
+    #navbar li {
+      display: inline-block;
+    }
+
+    #navbar li a {
+      color: rgb(250, 246, 246);
+      display: block;
+      font-size: 15px;
+      height: 50px;
+      letter-spacing: 0.2px;
+      margin: 0 20px;
+      padding: 0 4px;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+    }
+
+    #navbar li a:hover {
+      border-bottom: 1px solid rgb(240, 84, 12);
+      color: rgb(247, 94, 23);
+      transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+    }
+
+    /* Animated Bottom Line */
+    #navbar li a:before,
+    #navbar li a:after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 1px;
+      bottom: -1px;
+      background: rgb(13, 26, 38);
+    }
+
+    #navbar li a:before {
+      left: 0;
+      transition: 0.5s;
+    }
+
+    #navbar li a:after {
+      background: rgb(13, 26, 38);
+      right: 0;
+      /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
+    }
+
+    #navbar li a:hover:before {
+      background: rgb(13, 26, 38);
+      width: 100%;
+      transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+    }
+
+    #navbar li a:hover:after {
+      background: transparent;
+      width: 100%;
+      /* transition: 0s; */
+    }
+
+
+    @media(max-width: 640px) {
+      .menuIcon {
+        cursor: pointer;
+        display: block;
+        position: fixed;
+        right: 15px;
+        top: 20px;
+        height: 23px;
+        width: 27px;
+        z-index: 12;
+      }
+
+    }
+
+    ion-icon {
+      color: rgb(225, 240, 95);
+      font-size: 35px;
+      float: left;
+      position: absolute;
+      left: -440px;
+      top: 10px;
+    }
+
+
+   
+    /* Page header */
+    .page-header {
+      padding: 60px 0 44px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(49,87,213,.14), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(21,163,123,.10), transparent 28%),
+        var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+    .badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .page-header h1 {
+      margin-top: 18px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      letter-spacing: -.05em;
+      line-height: 1.05;
+      /* max-width: 640px; */
+    }
+    .page-header h1 .accent { color: var(--primary); }
+    .page-header p.lead {
+      margin-top: 16px;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    /* Topic chips (table of contents) */
+    .toc {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .toc a {
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      font-size: .85rem;
+      font-weight: 700;
+      color: #344054;
+      transition: .2s ease;
+    }
+    .toc a:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* Article layout */
+    .section { padding: 60px 0 90px; }
+    .article-grid {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .side-nav {
+      position: sticky;
+      top: 96px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .side-nav span {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight: 800;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .side-nav a {
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #475467;
+      border-left: 2px solid transparent;
+    }
+    .side-nav a:hover { color: var(--primary); background: #eef2ff; }
+
+    .topic-block {
+      scroll-margin-top: 96px;
+      padding: 34px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 30px rgba(16,24,40,.045);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .topic-block .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+    .topic-block h2 {
+      margin-top: 8px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.7rem;
+      letter-spacing: -.03em;
+    }
+    .topic-block p { margin-top: 14px; color: #475467; font-size: .98rem; }
+    .topic-block ul { margin-top: 14px; padding-left: 20px; color: #475467; font-size: .98rem; }
+    .topic-block li + li { margin-top: 8px; }
+    .topic-block img {
+      float: right;
+      width: 220px;
+      height: auto;
+      margin: 4px 0 14px 20px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+    }
+
+    .lang-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .lang-pills span {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: .88rem;
+    }
+
+    .project-list { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+    .project-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #f9fafb;
+      font-weight: 700;
+      color: var(--text);
+      transition: .2s ease;
+    }
+    .project-list a:hover { border-color: var(--primary); background: #eef2ff; color: var(--primary); }
+    .project-list a span { color: var(--primary); font-weight: 800; }
+
+  </style>
+</head>
+
+<body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+  <nav id="navbar" class="">
+    <div class="nav-wrapper">
+
+      <div class="logo">
+        <img class="logooo" width="35px" height="auto" src="olp/logo6.png">
+      </div>
+
+      <ul id="menu">
+        <li></li>
+        <a href="mweb.html"><ion-icon name="chevron-back-circle"></ion-icon></a>
+        <li><a href="mweb.html">contents</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="form.html">support</a> </li>
+
+
+      </ul>
+    </div>
+  </nav>
+
+  <br>
+  <br>
+  
+<style>
+  #h1font{
+    font-family: "Black Ops One", system-ui;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 80px;
+  }
+</style>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="badge">Technology · Featured topic</span>
+        <h1 id="h1font">Computer programming</h1>
+        <p class="lead">How instructions turn into running software — from writing source code to compiling, interpreting, and the languages that make it all possible.</p>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container article-grid">
+        <nav class="side-nav" aria-label="Section navigation">
+          <span>On this page</span>
+          <a href="#programming">Programming</a>
+          <a href="#compiling">Compiling</a>
+          <a href="#machine-language">Machine language</a>
+          <a href="#interpreter">Interpreter</a>
+          <a href="#history">History of programming</a>
+          <a href="#types">Types of languages</a>
+          <a href="#projects">My projects</a>
+        </nav>
+
+        <div>
+          <article class="topic-block" id="programming">
+            <span class="eyebrow">Overview</span>
+            <h2>Programming</h2>
+            <img src="olp/language.png" alt="Programming">
+            <p>Programming is the process of giving machines a set of instructions that describe how a program should be carried out. Programmers spend their careers learning a variety of programming languages and tools so they can effectively build computer programs. It typically starts with a code editor or IDE, used to write source code — a collection of code written in a programming language that other programmers can read.</p>
+            <p>Once the code is executed, the computer program can run. Different types of computer programs include word processors, database systems, video games, and websites.</p>
+          </article>
+
+          <article class="topic-block" id="compiling">
+            <span class="eyebrow">Step 1</span>
+            <h2>Compiling</h2>
+            <p>Source code needs to be converted into machine language so that machines can understand the instructions and execute the program. This process of converting source code into machine language is known as compiling.</p>
+          </article>
+
+          <article class="topic-block" id="machine-language">
+            <span class="eyebrow">Under the hood</span>
+            <h2>Machine language</h2>
+            <img src="olp/language2.jpeg" alt="Machine language">
+            <p>Machine language is a low-level programming language made out of binary numbers or bits that can only be read by machines. It's also known as machine code or object code, where instructions are executed directly by the CPU.</p>
+          </article>
+
+          <article class="topic-block" id="interpreter">
+            <span class="eyebrow">Alternative to compiling</span>
+            <h2>Interpreter</h2>
+            <p>Some languages don't use compilers at all. Instead, these languages use an interpreter that reads and executes the code directly.</p>
+            <p>Examples of interpreted programming languages include JavaScript and PHP.</p>
+          </article>
+
+          <article class="topic-block" id="history">
+            <span class="eyebrow">Where it started</span>
+            <h2>History of programming</h2>
+            <p>Many historians believe Ada Lovelace was the first to create a published computer program, in the mid-19th century. She was a mathematician who translated Luigi Federico Menabrea's writings on the Analytical Engine — adding her own extensive notes, including a method for calculating Bernoulli numbers on the Analytical Engine.</p>
+            <p>The work of mathematician Alonzo Church, along with the Turing machine, were among the first introductions of computer code. In the 1920s, computers were created, followed by the earliest programming languages. Over the following century, as machines and technology continued to evolve, so did the number of programming languages.</p>
+          </article>
+
+          <article class="topic-block" id="types">
+            <span class="eyebrow">Pick your tool</span>
+            <h2>Types of programming languages</h2>
+            <div class="lang-pills">
+              <span>JavaScript</span>
+              <span>C / C++</span>
+              <span>Java</span>
+              <span>C#</span>
+              <span>Ruby</span>
+              <span>PHP</span>
+            </div>
+          </article>
+
+          <article class="topic-block" id="projects">
+            <span class="eyebrow">Try it yourself</span>
+            <h2>My projects</h2>
+            <p>A couple of small built-with-code projects to play around with.</p>
+            <div class="project-list">
+              <a href="bulbmagic.html" target="_blank">Magic Bulb <span>→</span></a>
+              <a href="calculator.html" target="_blank">Calculator <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

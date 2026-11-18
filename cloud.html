@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Computer networks — devices, links, protocols, history, and types.">
+  <title>INTELLECT</title>
+  <link rel="icon" type="image/x-icon" href="olp/logo5.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=RXdfAN9MKNbm0Z83bfQLwWm_qyd6M9DBq6WR-_6f3TiXPnpTOtKgDkcD5ga60tnTp0aINasKgyig-kUhsTlj5Z8pn7nOFM4a1-5ZeYHxL4s" charset="UTF-8"></script><style>
+    :root { --bg: #f3f3de;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --primary: #3157d5;
+      --primary-dark: #203da5;
+      --accent: #15a37b;
+      --dark: #0b1220;
+      --shadow:0 18px 50px rgba(16,24,40,.09); --radius:24px; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:Inter,system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+   
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+
+    .container { width: min(1160px, calc(100% - 40px)); margin: auto; }
+
+    a {
+      color: inherit;
+      font-size: 10;
+      text-decoration: none;
+    }
+
+    #navbar {
+      background: rgb(24, 26, 25);
+      color: rgb(13, 26, 38);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 53px;
+      line-height: 60px;
+      width: 98.7vw;
+      z-index: 10;
+    }
+
+    @keyframes animateBg {
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    .nav-wrapper {
+      margin: auto;
+      text-align: center;
+      width: 70%;
+    }
+
+    @media(max-width: 768px) {
+      .nav-wrapper {
+        width: 90%;
+      }
+    }
+
+    @media(max-width: 638px) {
+      .nav-wrapper {
+        width: 100%;
+      }
+    }
+
+
+    .logo {
+      float: right;
+      position: absolute;
+      right: 2%;
+      margin-top: 1px;
+      font-size: 55px;
+      height: 0px;
+
+
+    }
+
+
+    #navbar ul {
+      list-style: none;
+      margin-right: 5px;
+      margin-top: -5px;
+      text-align: right;
+      position: absolute;
+      top: 2px;
+      left: 35%;
+      transition: transform 0.5s ease-out;
+      -webkit-transition: transform 0.5s ease-out;
+    }
+
+    @media(max-width: 640px) {
+      #navbar ul {
+        display: none;
+      }
+    }
+
+    @media(orientation: landscape) {
+      #navbar ul {
+        display: inline-block;
+      }
+    }
+
+    #navbar li {
+      display: inline-block;
+    }
+
+    #navbar li a {
+      color: rgb(250, 246, 246);
+      display: block;
+      font-size: 15px;
+      height: 50px;
+      letter-spacing: 0.2px;
+      margin: 0 20px;
+      padding: 0 4px;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+    }
+
+    #navbar li a:hover {
+      border-bottom: 1px solid rgb(240, 84, 12);
+      color: rgb(247, 94, 23);
+      transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+    }
+
+    /* Animated Bottom Line */
+    #navbar li a:before,
+    #navbar li a:after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 1px;
+      bottom: -1px;
+      background: rgb(13, 26, 38);
+    }
+
+    #navbar li a:before {
+      left: 0;
+      transition: 0.5s;
+    }
+
+    #navbar li a:after {
+      background: rgb(13, 26, 38);
+      right: 0;
+      /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
+    }
+
+    #navbar li a:hover:before {
+      background: rgb(13, 26, 38);
+      width: 100%;
+      transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+    }
+
+    #navbar li a:hover:after {
+      background: transparent;
+      width: 100%;
+      /* transition: 0s; */
+    }
+
+
+    @media(max-width: 640px) {
+      .menuIcon {
+        cursor: pointer;
+        display: block;
+        position: fixed;
+        right: 15px;
+        top: 20px;
+        height: 23px;
+        width: 27px;
+        z-index: 12;
+      }
+
+    }
+
+    ion-icon {
+      color: rgb(225, 240, 95);
+      font-size: 35px;
+      float: left;
+      position: absolute;
+      left: -440px;
+      top: 10px;
+    }
+
+
+
+    .page-header { padding:60px 0 44px; background:radial-gradient(circle at 85% 20%, rgba(49,87,213,.14), transparent 30%), radial-gradient(circle at 10% 90%, rgba(21,163,123,.10), transparent 28%), var(--surface); border-bottom:1px solid var(--line); }
+    .badge {
+       display:inline-flex;
+        padding:7px 12px;
+         border-radius:999px;
+          background:#eef2ff;
+           color:var(--primary); 
+           font-size:.78rem; 
+           font-weight:800;
+            text-transform:uppercase;
+             letter-spacing:.08em; }
+    .page-header h1 { margin-top:18px; font-family:"Space Grotesk",sans-serif; font-size:clamp(2.2rem,5vw,3.4rem); letter-spacing:-.05em; line-height:1.05;  }
+    .page-header h1 .accent { color:var(--primary); }
+    .page-header p.lead { margin-top:16px; max-width:620px; color:var(--muted); font-size:1.02rem; }
+    .toc { margin-top:28px; display:flex; flex-wrap:wrap; gap:10px; }
+    .toc a { padding:9px 15px; border-radius:999px; background:var(--surface); border:1px solid var(--line); font-size:.85rem; font-weight:700; color:#344054; transition:.2s ease; }
+    .toc a:hover { border-color:var(--primary); color:var(--primary); }
+    .section { padding:60px 0 90px; }
+    .article-grid { display:grid; grid-template-columns:210px 1fr; gap:50px; align-items:start; }
+    .side-nav { position:sticky; top:96px; display:flex; flex-direction:column; gap:4px; }
+    .side-nav span { font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--muted); margin-bottom:8px; }
+    .side-nav a { padding:8px 10px; border-radius:8px; font-size:.85rem; font-weight:600; color:#475467; }
+    .side-nav a:hover { color:var(--primary); background:#eef2ff; }
+    .topic-block { scroll-margin-top:96px; padding:34px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:0 8px 30px rgba(16,24,40,.045); margin-bottom:24px; overflow:hidden; }
+    .topic-block .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.1em; font-size:.72rem; font-weight:800; }
+    .topic-block h2 { margin-top:8px; font-family:"Space Grotesk",sans-serif; font-size:1.6rem; letter-spacing:-.03em; }
+    .topic-block p { margin-top:14px; color:#475467; font-size:.98rem; }
+    .topic-block img { float:right; width:230px; height:auto; margin:4px 0 14px 20px; border-radius:16px; border:1px solid var(--line); }
+    .sub-item { margin-top:18px; }
+    .sub-item:first-child { margin-top:0; }
+    .sub-item h3 { font-family:"Space Grotesk",sans-serif; font-size:1.02rem; color:var(--primary); }
+    .sub-item p { margin-top:4px; }
+    .type-pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .type-pills span { padding:8px 14px; border-radius:999px; background:#eef2ff; color:var(--primary); font-weight:700; font-size:.85rem; }
+   
+    
+  </style>
+</head>
+<body>
+
+  
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<nav id="navbar" class="">
+    <div class="nav-wrapper">
+
+      <div class="logo">
+        <img class="logooo" width="35px" height="auto" src="olp/logo6.png">
+      </div>
+
+      <ul id="menu">
+        <li></li>
+        <a href="mweb.html"><ion-icon name="chevron-back-circle"></ion-icon></a>
+        <li><a href="mweb.html">contents</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="form.html">support</a> </li>
+      </ul>
+    </div>
+  </nav>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+<style>
+  #h1font{
+    font-family: "Black Ops One", system-ui;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 80px;
+  }
+</style>
+
+<br>
+<br>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="badge">Technology · Featured topic</span>
+        <h1 id="h1font">Computer network</h1>
+        <p class="lead">How devices connect, share information, and stay secure — from the hardware involved to the protocols that keep it all in sync.</p>
+       
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container article-grid">
+        <nav class="side-nav" aria-label="Section navigation">
+          <span>On this page</span>
+          <a href="#what-is">What is a network</a>
+          <a href="#devices">Network devices</a>
+          <a href="#links">Links</a>
+          <a href="#protocols">Communication protocols</a>
+          <a href="#defense">Network defense</a>
+          <a href="#history">History</a>
+          <a href="#types">Types of networks</a>
+        </nav>
+
+        <div>
+          <article class="topic-block" id="what-is">
+            <span class="eyebrow">Overview</span>
+            <h2>What is a computer network</h2>
+            <img src="olp/comp.jpeg" alt="Computer network">
+            <p>A computer network is a system that connects two or more computing devices for transmitting and sharing information. Computing devices include everything from a mobile phone to a server.</p>
+            <p>These devices are connected using physical wires such as fiber optics, but can also be wireless. Networks may be classified by many criteria, including the transmission medium, bandwidth, communication protocols, network size, topology, traffic control mechanisms, and organizational intent.</p>
+            <p>Computer networks support many applications and services — access to the World Wide Web, digital video and audio, shared application and storage servers, printers and fax machines, and email and instant messaging.</p>
+          </article>
+
+          <article class="topic-block" id="devices">
+            <span class="eyebrow">Key components — 1</span>
+            <h2>Network devices</h2>
+            <img src="olp/key.jpeg" alt="Network devices">
+            <p>Network devices, or nodes, are computing devices that need to be linked in the network. Some examples:</p>
+            <div class="sub-item">
+              <h3>Computers, mobiles, and other consumer devices</h3>
+              <p>End devices that users directly and frequently access.</p>
+            </div>
+            <div class="sub-item">
+              <h3>Routers</h3>
+              <p>Routing is the process of selecting the network path through which data packets travel.</p>
+            </div>
+            <div class="sub-item">
+              <h3>Servers</h3>
+              <p>Application or storage servers where the main computation and data storage occur — all requests for specific tasks or data come to the servers.</p>
+            </div>
+            <div class="sub-item">
+              <h3>Switch</h3>
+              <p>Repeaters are to networks what transformers are to electricity grids — devices that receive network signals and clean or strengthen them. Hubs are repeaters with multiple ports, passing data to whichever ports are available. Bridges only pass data to the destination port. A switch is a multi-port bridge.</p>
+            </div>
+            <div class="sub-item">
+              <h3>Gateways</h3>
+              <p>Hardware devices that act as gates between two distinct networks — these can be firewalls, routers, or servers.</p>
+            </div>
+          </article>
+
+          <article class="topic-block" id="links">
+            <span class="eyebrow">Key components — 2</span>
+            <h2>Links</h2>
+            <p>Links are the transmission media, which can be of two types:</p>
+            <div class="sub-item">
+              <h3>Wired</h3>
+              <p>Examples include coaxial cables, phone lines, twisted-pair cabling, and optical fibers.</p>
+            </div>
+            <div class="sub-item">
+              <h3>Wireless</h3>
+              <p>Network connections can also be established through radio or other electromagnetic signals.</p>
+            </div>
+          </article>
+
+          <article class="topic-block" id="protocols">
+            <span class="eyebrow">Key components — 3</span>
+            <h2>Communication protocols</h2>
+            <p>A communication protocol is a set of rules followed by all nodes involved in the information transfer. Common protocols include the internet protocol suite (TCP/IP), IEEE 802, Ethernet, wireless LAN, and cellular standards.</p>
+            <div class="sub-item">
+              <h3>Network access layer</h3>
+              <p>Defines how data is physically transferred — how hardware sends data bits through physical wires or fibers.</p>
+            </div>
+            <div class="sub-item">
+              <h3>Internet layer</h3>
+              <p>Responsible for packaging data into understandable packets and allowing it to be sent and received.</p>
+            </div>
+            <div class="sub-item">
+              <h3>Transport layer</h3>
+              <p>Enables devices to maintain a conversation by ensuring the connection is valid and stable.</p>
+            </div>
+            <div class="sub-item">
+              <h3>Application layer</h3>
+              <p>Defines how high-level applications can access the network to initiate data transfer.</p>
+            </div>
+          </article>
+
+          <article class="topic-block" id="defense">
+            <span class="eyebrow">Key components — 4</span>
+            <h2>Network defense</h2>
+            <p>While nodes, links, and protocols form the foundation of a network, a modern network cannot exist without its defenses. Security is critical when unprecedented amounts of data are generated, moved, and processed across networks.</p>
+          </article>
+
+          <article class="topic-block" id="history">
+            <span class="eyebrow">Where it started</span>
+            <h2>History</h2>
+            <img src="olp/his.jpeg" alt="History of computer networks">
+            <p>The first working network, called ARPANET, was created in the late 1960s and funded by the U.S. Department of Defense. Government researchers used it to share information at a time when computers were large and difficult to move.</p>
+          </article>
+
+          <article class="topic-block" id="types">
+            <span class="eyebrow">Not all the same</span>
+            <h2>Types of computer networks</h2>
+            <div class="type-pills">
+              <span>Local Area Network (LAN)</span>
+              <span>Personal Area Network (PAN)</span>
+              <span>Wireless LAN (WLAN)</span>
+              <span>Campus Area Network (CAN)</span>
+              <span>Metropolitan Area Network (MAN)</span>
+              <span>Wide Area Network (WAN)</span>
+              <span>Storage Area Network (SAN)</span>
+              <span>Passive Optical LAN (POLAN)</span>
+              <span>Enterprise Private Network (EPN)</span>
+              <span>Virtual Private Network (VPN)</span>
+              <span>System-Area Network (SAN)</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

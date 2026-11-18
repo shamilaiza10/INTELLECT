@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support INTELLECT</title>
+  <link rel="icon" type="image/x-icon" href="olp/logo5.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f4f7ff;
+      --surface:#ffffff;
+      --text:#111827;
+      --muted:#58657b;
+      --primary:#4f46e5;
+      --primary-strong:#2f2bc2;
+      --secondary:#1dc9b2;
+      --accent:#ffd466;
+      --line:rgba(17,24,39,.08);
+      --shadow:0 30px 60px rgba(22,26,48,.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      min-height:100vh;
+      font-family:"DM Sans",system-ui,sans-serif;
+      color:var(--text);
+      background:#05070f;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,textarea{font:inherit}
+
+    /* Night-sky page background + shooting stars */
+    .sky{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#05070f url("olp/starry-lake.png") center/cover no-repeat; backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* Safari support */}
+    .star{position:absolute;top:0;right:var(--x,0);width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.1),0 0 0 8px rgba(255,255,255,.1),0 0 20px rgba(255,255,255,.1);animation:shoot var(--dur,3s) linear var(--delay,0s) infinite}
+    .star::before{content:"";position:absolute;top:50%;transform:translateY(-50%);width:300px;height:1px;background:linear-gradient(90deg,#fff,transparent)}
+    .star:nth-child(1){--x:0;--dur:1s;--delay:0s}
+    .star:nth-child(2){--x:100px;--dur:3s;--delay:.2s}
+    .star:nth-child(3){--x:220px;--dur:2.75s;--delay:2.75s}
+    .star:nth-child(4){--x:-220px;--dur:1.6s;--delay:1.6s}
+    .star:nth-child(5){--x:-600px;--dur:2.6s;--delay:2.6s}
+    .star:nth-child(6){--x:420px;--dur:1s;--delay:1.2s}
+    @keyframes shoot{
+      0%{transform:rotate(315deg) translateX(0);opacity:1}
+      70%{opacity:1}
+      100%{transform:rotate(315deg) translateX(-1000px);opacity:0}
+    }
+    @media (prefers-reduced-motion:reduce){.star{animation:none;opacity:0}}
+    .close{
+      position:fixed;left:22px;top:20px;z-index:20;
+      width:42px;height:42px;border-radius:50%;
+      display:grid;place-items:center;
+      background:rgba(17,24,39,.6);border:1px solid rgba(255,255,255,.25);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+      color:#fff;font-size:2rem;line-height:1
+    }
+    main{display:grid;place-items:center;min-height:100vh;padding:80px 20px 40px}
+    .panel{
+      width:min(1100px,100%);display:grid;grid-template-columns:1fr 1.1fr;overflow:hidden;
+      background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)
+    }
+    .side-panel{
+      background:linear-gradient(160deg,#0c1326,#182c67 54%,#1b3a5c);
+      color:#edf3ff;padding:42px 32px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;
+    }
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#cfe0ff;font-weight:800}
+    .side-panel h1{font-family:"Bricolage Grotesque","DM Sans",sans-serif;font-size:clamp(2.4rem,4.5vw,4rem);line-height:1;letter-spacing:-.06em;margin-top:18px}
+    .side-panel p{color:#dfe9ff;max-width:38ch;line-height:1.7}
+    .info-stack{display:grid;gap:14px;margin-top:18px}
+    .info-item{padding:14px 16px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.04)}
+    .info-item strong{display:block;font-size:1.05rem}
+    .info-item span{display:block;margin-top:6px;color:#cfdefb;font-size:.95rem}
+
+    .form-panel{padding:34px 30px 28px}
+    .heading{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:20px}
+    .heading h2{font-family:"Bricolage Grotesque","DM Sans",sans-serif;font-size:clamp(2rem,3vw,2.8rem);letter-spacing:-.05em}
+    .heading span{color:var(--muted);font-size:.9rem;font-weight:700}
+    form{display:grid;gap:18px}
+    .input-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    label{display:grid;gap:8px;color:var(--text);font-weight:700;font-size:.9rem}
+    input,textarea{
+      width:100%;border:1px solid var(--line);background:#f9fbff;border-radius:14px;padding:14px 16px;color:var(--text);outline:none;transition:border-color .2s, box-shadow .2s
+    }
+    input:focus,textarea:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    textarea{resize:vertical;min-height:140px}
+    .checkbox-row{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.94rem}
+    .checkbox-row input{width:auto;accent-color:var(--primary)}
+    .submit-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:8px}
+    button[type="submit"]{
+      border:0;cursor:pointer;border-radius:14px;padding:15px 22px;background:linear-gradient(135deg,var(--primary),var(--primary-strong));
+      color:#fff;font-weight:800;box-shadow:0 18px 28px rgba(79,70,229,.25)
+    }
+    .note{color:var(--muted);font-size:.84rem}
+    .success{display:none;color:#0b7b5f;font-weight:800}
+    .success.show{display:block}
+    .error{display:none;color:#b91c1c;font-weight:800}
+    .error.show{display:block}
+    button[type="submit"]:disabled{opacity:.6;cursor:not-allowed}
+    @media (max-width: 860px){
+      .panel{grid-template-columns:1fr}
+      .side-panel{padding-bottom:26px}
+    }
+    @media (max-width: 560px){
+      .input-grid{grid-template-columns:1fr}
+      .form-panel{padding:24px 18px}
+      .close{left:14px;top:14px}
+    }
+  </style>
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+  </div>
+
+  <a href="index.html" aria-label="Go back home" class="close">&times;</a>
+
+  <main>
+    <section class="panel">
+      <aside class="side-panel">
+        <div>
+          <span class="badge">Support INTELLECT</span>
+          <h1>Help more people learn with confidence.</h1>
+        </div>
+
+        <p>Whether you want to sponsor a lesson, volunteer ideas, or simply send encouragement, your support helps spread free knowledge and build a stronger learning community.</p>
+
+        <div class="info-stack">
+          <div class="info-item">
+            <strong>Volunteer</strong>
+            <span>Share your time, ideas, or feedback to improve the platform.</span>
+          </div>
+          <div class="info-item">
+            <strong>Fund learning</strong>
+            <span>Support new resources, topics, and student-friendly content.</span>
+          </div>
+          <div class="info-item">
+            <strong>Spread the word</strong>
+            <span>Tell others about learning tools that make education more accessible.</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="form-panel">
+        <div class="heading">
+          <h2>Send a message</h2>
+          <span>We usually reply within 24–48 hours</span>
+        </div>
+
+        <form id="supportForm" autocomplete="on">
+          <div class="input-grid">
+            <label>
+              Full name
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label>
+              Email address
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+          </div>
+
+          <label>
+            Subject
+            <input type="text" name="subject" placeholder="Support request / partnership / feedback" required>
+          </label>
+
+          <label>
+            Your message
+            <textarea name="message" placeholder="Tell us how you'd like to help or what you need assistance with..." required></textarea>
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox" name="consent" required>
+            I agree to be contacted regarding my message.
+          </label>
+
+          <div class="submit-row">
+            <button type="submit" id="submitbutton">Send message</button>
+            <span class="note">or email us at <a href="mailto:intellectedupvt@gmail.com">intellecteducationpvt@gmail.com</a></span>
+          </div>
+
+          <div class="success" id="successMessage" role="status">Thanks for reaching out — your message has been sent.</div>
+          <div class="error" id="errorMessage" role="alert">Something went wrong. Please try again.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Paste your deployed Apps Script Web App URL here (must end with /exec)
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzDSCrnD3XLo626MOd9ciQ6YClGSU3KXKTQG8eSBgi2naNPd52i6uIMr288h2_RJ7dO/exec";
+
+    const form = document.getElementById('supportForm');
+    const success = document.getElementById('successMessage');
+    const errorBox = document.getElementById('errorMessage');
+    const submitBtn = document.getElementById('submitbutton');
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      success.classList.remove('show');
+      errorBox.classList.remove('show');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      // Keys here MUST match the header names in row 1 of your Google Sheet
+      const data = new URLSearchParams({
+        name: form.elements['name'].value.trim(),
+        email: form.elements['email'].value.trim(),
+        subject: form.elements['subject'].value.trim(),
+        message: form.elements['message'].value.trim(),
+        consent: form.elements['consent'].checked ? 'Yes' : 'No'
+      });
+
+      try {
+        const res = await fetch(SCRIPT_URL, { method: 'POST', body: data });
+        const result = await res.json();
+        if (result.result !== 'success') throw new Error(result.error || 'Unknown error');
+        success.classList.add('show');
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        errorBox.classList.add('show');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message';
+      }
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        :root{--bg:#fff;--grid:rgba(47,91,234,.07)}
+
+/* graph-paper grid with a soft blue glow at the top */
+body{
+  background:
+    radial-gradient(70% 40% at 50% 0%,rgba(47,91,234,.09),transparent 70%),
+    linear-gradient(var(--grid) 1px,transparent 1px) 0 0/32px 32px,
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/32px 32px,
+    var(--bg);
+  background-attachment:fixed;
+}
+
+/* floating handwritten formulas */
+.doodles{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.doodles span{
+  position:absolute;left:var(--x);top:var(--y);
+  font:600 var(--s,2.4rem)/1 Caveat,cursive;
+  color:rgba(47,91,234,.16);
+  transform:rotate(var(--r));
+  animation:bob 9s ease-in-out infinite;
+  animation-delay:var(--d);
+}
+@keyframes bob{50%{translate:0 -16px}}
+
+/* fewer doodles on phones; no motion if the user prefers it */
+@media(max-width:600px){.doodles span:nth-child(n+5){display:none}}
+@media(prefers-reduced-motion:reduce){.doodles span{animation:none}}
+    </style>
+    <div class="doodles" aria-hidden="true">
+  <span style="--x:4%;--y:18%;--r:-8deg;--s:2.6rem;--d:0s">E = mc²</span>
+  <span style="--x:88%;--y:12%;--r:10deg;--s:4rem;--d:-2s">π</span>
+  <span style="--x:80%;--y:64%;--r:-6deg;--s:4.2rem;--d:-4s">∑</span>
+  <span style="--x:6%;--y:70%;--r:7deg;--s:2.8rem;--d:-1s">H₂O</span>
+  <span style="--x:48%;--y:86%;--r:-10deg;--s:3.4rem;--d:-5s">A+</span>
+  <span style="--x:84%;--y:38%;--r:12deg;--s:3rem;--d:-3s">√x</span>
+  <span style="--x:60%;--y:6%;--r:5deg;--s:2.4rem;--d:-6s">F = ma</span>
+  <span style="--x:22%;--y:90%;--r:-5deg;--s:2.4rem;--d:-7s">{ code }</span>
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+</body>
+</html>

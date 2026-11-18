@@ -1,0 +1,81 @@
+Good Morning Everyone, I am Muhammed Shamil, from 9th
+
+Today, I am pleased to introduce an E-learning platform website. 
+
+In this digital era, we  all are aware of the advancements in technology. 
+
+As a student, I used to rely on Google for searching relevant information.
+
+However, with this website, you can access all the necessary  information with just a single click. 
+
+Its name is INTELLECT, 
+
+I developed this website using JS, HTML, and CSS. 8
+
+The homepage showcases various buttons that lead to different pages .aditionally i have incorporated several functionalities 
+across all pages, including a back-to-top button,a cat bot ,counter  and a feedback form.
+
+Now, let me guide you through each page and functionalities.
+
+
+as i said in the beginning , if you click these button , it will open respective pages . 
+
+so , lets start with  about ...
+now i will show you support page . where  you can see a form . you can leave your feedback  here after my presentation . i have also done the backend for this form . the datas submitted by customers will be send to my Gmail as well as it  will be saved in a spreadsheet. 
+i will show u that , one sec pls
+
+
+lets go back.
+
+ u might have noticed this  popup . which says need help in studies . this is a sub-website Attain . i will come to  this after explaining the main web .
+
+
+when you scroll down  you can see some boxes, 
+i have added most trending topics here. So for a trial let us take ...
+
+when u scroll down u can see a counter wihich works when we scroll . 
+now u can see a mission , which fade in when scrolled.
+
+
+if you come down , you can see a beautiful  footer-- with company, other websites, get in touch and a follow button . you can follow me in any one of these . (you tube trial )
+here u can see an option developer , when it is clicked it takes to my portfolio.
+
+Now i will show u my chatbot . 95% of this is java script. here u can ask about contents , developer , about us etc..
+
+now lets check out content page. 
+here u can see 10 boxes with differ contents , later i will add some more topics to it .i have also added a search button in the nav. 
+down u can see the pagination .
+
+now i will show you each contents one by one .
+
+so its finished. now i will show you my sub-website "ATTAIN".
+
+the word attain signifies  succeed in achieving something .
+here you can see a cool banner with glowing text . i have added some buttons at top. 
+so lets check about....
+
+now i will show you contents in this page . 
+all together there are 10 contents. i will show you one by one .
+
+if you come down you can see footer . 
+
+
+its all. I would like to wrap up my presentation. Please feel free to ask any questions
+ or share any concerns you may have regarding this website.
+
+Thank you, everyone, and have a wonderful day!
+
+
+
+
+
+
+(this was the name came to my mind when i started developing this website)
+if they ask already we have wikipedia and other e platforming websites
+
+
+then say --> yes, we do have learning websites, but most of them  a bulk of data.some data  may not be useful to us in any ways .
+But in my website if you want to get information on current booming topics ,
+for Example, if we get some assignments from school to explain the information on such topics,
+students can check my website for detailed information in a single click. We only disply the imprtant information here and helps to save the time of customers .
+
